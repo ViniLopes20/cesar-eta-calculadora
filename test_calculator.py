@@ -140,15 +140,15 @@ class TestDivisao:
         assert self.op.executar(0, 5) == 0
 
     def test_por_zero_levanta_erro(self):
-        with pytest.raises(ValueError, match="Divisão por zero"):
+        with pytest.raises(ValueError, match="Erro"):
             self.op.executar(5, 0)
 
     def test_zero_dividido_por_zero_levanta_erro(self):
-        with pytest.raises(ValueError, match="Divisão por zero"):
+        with pytest.raises(ValueError, match="Erro"):
             self.op.executar(0, 0)
 
     def test_negativo_dividido_por_zero_levanta_erro(self):
-        with pytest.raises(ValueError, match="Divisão por zero"):
+        with pytest.raises(ValueError, match="Erro"):
             self.op.executar(-5, 0)
 
     def test_divisao_nao_exata(self):
@@ -184,7 +184,7 @@ class TestCalculadora:
             self.calc.calcular(1, "%", 2)
 
     def test_divisao_por_zero_via_calculadora(self):
-        with pytest.raises(ValueError, match="Divisão por zero"):
+        with pytest.raises(ValueError, match="Erro"):
             self.calc.calcular(5, "÷", 0)
 
     def test_simbolo_vazio(self):

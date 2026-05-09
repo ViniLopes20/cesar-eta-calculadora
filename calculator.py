@@ -38,7 +38,7 @@ class Divisao(Operacao):
 
     def executar(self, a: float, b: float) -> float:
         if b == 0:
-            raise ValueError("Divisão por zero")
+            raise ValueError("Erro")
         return a / b
 
 
