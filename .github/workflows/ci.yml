@@ -25,4 +25,11 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Rodar testes
-        run: pytest test_calculator.py -v
+        run: pytest test_calculator.py -v --html=relatorio.html --self-contained-html
+
+      - name: Publicar relatório HTML
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relatorio-testes
+          path: relatorio.html
